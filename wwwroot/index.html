@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PKHeX Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>PKHeX Web</h1>
+
+<div style="text-align:center; padding:10px;">
+    <input type="file" id="saveFile">
+<button onclick="uploadSave()">Load Save</button>
+</div>
+
+<div id="layout">
+    
+    <div id="boxesArea"></div>
+
+   
+    <div id="editorPanel">
+        <h2>Pok&eacute;mon Editor</h2>
+
+        <img id="sprite" style="width:96px; display:block; margin:auto">
+
+        <label>Species</label>
+        <input id="editSpecies">
+
+        <label>Level</label>
+        <input id="editLevel" type="number">
+
+        <label>Nature</label>
+        <select id="editNature">
+            <option>Hardy</option>
+            <option>Adamant</option>
+            <option>Modest</option>
+            <option>Jolly</option>
+        </select>
+<div id="stats">
+</div>
+
+<h3>Moves</h3>
+Move 1 <input id="move0">
+Move 2 <input id="move1">
+Move 3 <input id="move2">
+Move 4 <input id="move3">
+
+<select id="editAbility"></select>
+
+<select id="editItem"></select>
+
+<select id="editForm"></select>
+
+<label>Shiny<br><br><input type="checkbox" id="editShiny"></label>
+
+<button onclick="checkLegality()">Check Legality</button>
+<div id="legalReport" style="white-space:pre-wrap; font-size:12px;"></div>
+
+<button onclick="fixPokemon()">Fix Data</button>
+<div id="legalStatus"></div>
+
+        <button onclick="savePokemon()">Apply Changes</button>
+        <button onclick="window.location='/api/save/download'">Download Save</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
